@@ -82,7 +82,7 @@ RUN wget https://github.com/swoole/swoole-src/archive/v4.6.7.tar.gz -O swoole.ta
  && phpize \
  && ./configure  --enable-mysqlnd --enable-openssl --enable-http2 \
  && make  \
- && make install \
+ && make install && cd ../ \
  && rm -r swoole \
  && docker-php-ext-enable swoole
 ## Swoole_async extension
